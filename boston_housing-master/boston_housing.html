@@ -11803,7 +11803,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 载入此项目所需要的库</span>
@@ -11827,7 +11827,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 载入波士顿房屋的数据集</span>
@@ -11896,7 +11896,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#TODO 1</span>
@@ -11975,7 +11975,8 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#38382;&#39064;-1---&#22238;&#31572;&#65306;">&#38382;&#39064; 1 - &#22238;&#31572;&#65306;<a class="anchor-link" href="#&#38382;&#39064;-1---&#22238;&#31572;&#65306;">&#194;&#182;</a></h3>
+<h3>问题 1 - 回答：<font size=3> 1.RM增大，MEDV增大，房间数量多则价格更贵。2.LSTAT增大，MEDV减小，低收入人群更倾向住在房价低的地方。3.PTRATIO增大，MEDV减小，通常老师更多则教育质量更高，教育质量高的地方房价高。</h3>
+
 </div>
 </div>
 </div>
@@ -11996,7 +11997,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO 2</span>
@@ -12061,7 +12062,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO 3</span>
@@ -12083,7 +12084,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO 3 可选</span>
@@ -12092,8 +12093,8 @@ Standard deviation of prices: $165,171.13
 
 <span class="k">def</span> <span class="nf">performance_metric2</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;计算并返回预测值相比于预测值的分数&quot;&quot;&quot;</span>
-    
-    <span class="n">score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">)))</span>
+    <span class="n">mean_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">)))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">y_true</span><span class="o">-</span><span class="n">mean_y</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">score</span>
 </pre></div>
 
@@ -12144,13 +12145,13 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 计算这个模型的预测结果的决定系数</span>
 <span class="n">score</span> <span class="o">=</span> <span class="n">performance_metric</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">])</span>
 <span class="k">print</span> <span class="s2">&quot;Model has a coefficient of determination, R^2, of {:.3f}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
-<span class="n">score2</span> <span class="o">=</span> <span class="n">performance_metric</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">])</span>
+<span class="n">score2</span> <span class="o">=</span> <span class="n">performance_metric2</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">])</span>
 <span class="k">print</span> <span class="s2">&quot;Model has a coefficient of determination, R^2, of {:.3f}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score2</span><span class="p">)</span>
 </pre></div>
 
@@ -12183,6 +12184,21 @@ Model has a coefficient of determination, R^2, of 0.923.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#38382;&#39064;-3---&#22238;&#31572;:&#19981;&#25104;&#21151;&#65292;&#22240;&#20026;&#36825;&#37324;&#25968;&#25454;&#37327;&#27604;&#36739;&#23567;&#65292;&#19981;&#31526;&#21512;93%&#30340;&#25968;&#25454;&#39044;&#27979;&#36739;&#22909;&#12290;">&#38382;&#39064; 3 - &#22238;&#31572;:&#19981;&#25104;&#21151;&#65292;&#22240;&#20026;&#36825;&#37324;&#25968;&#25454;&#37327;&#27604;&#36739;&#23567;&#65292;&#19981;&#31526;&#21512;93%&#30340;&#25968;&#25454;&#39044;&#27979;&#36739;&#22909;&#12290;<a class="anchor-link" href="#&#38382;&#39064;-3---&#22238;&#31572;:&#19981;&#25104;&#21151;&#65292;&#22240;&#20026;&#36825;&#37324;&#25968;&#25454;&#37327;&#27604;&#36739;&#23567;&#65292;&#19981;&#31526;&#21512;93%&#30340;&#25968;&#25454;&#39044;&#27979;&#36739;&#22909;&#12290;">&#194;&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#32534;&#31243;&#32451;&#20064;-2:-&#25968;&#25454;&#20998;&#21106;&#19982;&#37325;&#25490;">&#32534;&#31243;&#32451;&#20064; 2: &#25968;&#25454;&#20998;&#21106;&#19982;&#37325;&#25490;<a class="anchor-link" href="#&#32534;&#31243;&#32451;&#20064;-2:-&#25968;&#25454;&#20998;&#21106;&#19982;&#37325;&#25490;">&#194;&#182;</a></h3><p>接下来，你需要把波士顿房屋数据集分成训练和测试两个子集。通常在这个过程中，数据也会被重排列，以消除数据集中由于顺序而产生的偏差。
+在下面的代码中，你需要</p>
+<p>使用 <code>sklearn.model_selection</code> 中的 <code>train_test_split</code>， 将<code>features</code>和<code>prices</code>的数据都分成用于训练的数据子集和用于测试的数据子集。</p>
+<ul>
+<li>分割比例为：80%的数据用于训练，20%用于测试；</li>
+<li>选定一个数值以设定 <code>train_test_split</code> 中的 <code>random_state</code> ，这会确保结果的一致性；</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -13749,7 +13765,8 @@ qCAAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#38382;&#39064;-5---&#22238;&#31572;:&#26368;&#22823;&#28145;&#24230;&#20026;1&#35757;&#32451;&#26102;&#65292;&#39044;&#27979;&#20986;&#29616;&#20102;&#24456;&#22823;&#30340;&#26041;&#24046;&#65292;&#26368;&#22823;&#28145;&#24230;&#20026;10&#65292;&#20986;&#29616;&#20102;&#24456;&#22823;&#30340;&#20559;&#24046;&#12290;&#28145;&#24230;&#20026;1&#26102;&#27169;&#22411;&#30340;&#35757;&#32451;&#20998;&#25968;&#30053;&#39640;&#20110;&#27979;&#35797;&#20998;&#25968;&#20294;&#37117;&#24456;&#20302;&#65292;&#28145;&#24230;&#20026;10&#26102;&#35757;&#32451;&#20998;&#25968;&#24456;&#39640;&#65292;&#27979;&#35797;&#20998;&#25968;&#36739;&#20302;&#12290;">&#38382;&#39064; 5 - &#22238;&#31572;:&#26368;&#22823;&#28145;&#24230;&#20026;1&#35757;&#32451;&#26102;&#65292;&#39044;&#27979;&#20986;&#29616;&#20102;&#24456;&#22823;&#30340;&#26041;&#24046;&#65292;&#26368;&#22823;&#28145;&#24230;&#20026;10&#65292;&#20986;&#29616;&#20102;&#24456;&#22823;&#30340;&#20559;&#24046;&#12290;&#28145;&#24230;&#20026;1&#26102;&#27169;&#22411;&#30340;&#35757;&#32451;&#20998;&#25968;&#30053;&#39640;&#20110;&#27979;&#35797;&#20998;&#25968;&#20294;&#37117;&#24456;&#20302;&#65292;&#28145;&#24230;&#20026;10&#26102;&#35757;&#32451;&#20998;&#25968;&#24456;&#39640;&#65292;&#27979;&#35797;&#20998;&#25968;&#36739;&#20302;&#12290;<a class="anchor-link" href="#&#38382;&#39064;-5---&#22238;&#31572;:&#26368;&#22823;&#28145;&#24230;&#20026;1&#35757;&#32451;&#26102;&#65292;&#39044;&#27979;&#20986;&#29616;&#20102;&#24456;&#22823;&#30340;&#26041;&#24046;&#65292;&#26368;&#22823;&#28145;&#24230;&#20026;10&#65292;&#20986;&#29616;&#20102;&#24456;&#22823;&#30340;&#20559;&#24046;&#12290;&#28145;&#24230;&#20026;1&#26102;&#27169;&#22411;&#30340;&#35757;&#32451;&#20998;&#25968;&#30053;&#39640;&#20110;&#27979;&#35797;&#20998;&#25968;&#20294;&#37117;&#24456;&#20302;&#65292;&#28145;&#24230;&#20026;10&#26102;&#35757;&#32451;&#20998;&#25968;&#24456;&#39640;&#65292;&#27979;&#35797;&#20998;&#25968;&#36739;&#20302;&#12290;">&#194;&#182;</a></h3>
+<h3 id="&#38382;&#39064;-5---&#22238;&#31572;:">&#38382;&#39064; 5 - &#22238;&#31572;:<a class="anchor-link" href="#&#38382;&#39064;-5---&#22238;&#31572;:">&#194;&#182;</a></h3><p><font size=3>最大深度为1训练时，偏差大，最大深度为10，方差大。深度为1时模型的训练分数略与测试分数收敛但都很低，深度为10时训练分数很高，测试分数很低，模型没有收敛。</p>
+
 </div>
 </div>
 </div>
@@ -13758,6 +13775,21 @@ qCAAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#38382;&#39064;-6--&#26368;&#20248;&#27169;&#22411;&#30340;&#29468;&#27979;">&#38382;&#39064; 6- &#26368;&#20248;&#27169;&#22411;&#30340;&#29468;&#27979;<a class="anchor-link" href="#&#38382;&#39064;-6--&#26368;&#20248;&#27169;&#22411;&#30340;&#29468;&#27979;">&#194;&#182;</a></h3><p><em>结合问题 5 中的图，你认为最大深度是多少的模型能够最好地对未见过的数据进行预测？你得出这个答案的依据是什么？</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#32534;&#31243;&#32451;&#20064;-2:-&#25968;&#25454;&#20998;&#21106;&#19982;&#37325;&#25490;">&#32534;&#31243;&#32451;&#20064; 2: &#25968;&#25454;&#20998;&#21106;&#19982;&#37325;&#25490;<a class="anchor-link" href="#&#32534;&#31243;&#32451;&#20064;-2:-&#25968;&#25454;&#20998;&#21106;&#19982;&#37325;&#25490;">&#194;&#182;</a></h3><p>接下来，你需要把波士顿房屋数据集分成训练和测试两个子集。通常在这个过程中，数据也会被重排列，以消除数据集中由于顺序而产生的偏差。
+在下面的代码中，你需要</p>
+<p>使用 <code>sklearn.model_selection</code> 中的 <code>train_test_split</code>， 将<code>features</code>和<code>prices</code>的数据都分成用于训练的数据子集和用于测试的数据子集。</p>
+<ul>
+<li>分割比例为：80%的数据用于训练，20%用于测试；</li>
+<li>选定一个数值以设定 <code>train_test_split</code> 中的 <code>random_state</code> ，这会确保结果的一致性；</li>
+</ul>
 
 </div>
 </div>
@@ -13792,7 +13824,8 @@ qCAAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#38382;&#39064;-7---&#22238;&#31572;:&#36873;&#25321;&#38656;&#35201;&#35843;&#35797;&#30340;&#21442;&#25968;&#65292;&#31351;&#20030;&#25214;&#20986;&#26368;&#20248;&#30340;&#21442;&#25968;">&#38382;&#39064; 7 - &#22238;&#31572;:&#36873;&#25321;&#38656;&#35201;&#35843;&#35797;&#30340;&#21442;&#25968;&#65292;&#31351;&#20030;&#25214;&#20986;&#26368;&#20248;&#30340;&#21442;&#25968;<a class="anchor-link" href="#&#38382;&#39064;-7---&#22238;&#31572;:&#36873;&#25321;&#38656;&#35201;&#35843;&#35797;&#30340;&#21442;&#25968;&#65292;&#31351;&#20030;&#25214;&#20986;&#26368;&#20248;&#30340;&#21442;&#25968;">&#194;&#182;</a></h3>
+<h3>问题 7 - 回答:<br/><font size=3 face='黑体'>1. 网格搜索法可以用来寻找合适的参数，尝试所有可能的参数组合，给出最优化的结果和参数。 用网格搜索法得到的参数可以避免欠拟合和过拟合，从而优化模型的预测能力。 <br/>2. 网格搜索中的网格意思就是尝试各种给出的参数组合，穷举遍历，从中得出最优的参数组合。 参数组合需要人为设定好的。 它根据在不同参数组合下的模型的metric score来得到最优组合，得分最高的就是最优组合。 而对于评分所使用的metric需要人为指定。</h3>
+
 </div>
 </div>
 </div>
@@ -13815,7 +13848,7 @@ qCAAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#38382;&#39064;-8---&#22238;&#31572;&#65306;&#23558;&#25968;&#25454;&#20998;&#20026;K&#20221;&#65292;&#27599;&#27425;&#20351;&#29992;&#20854;&#20013;1&#20221;&#20316;&#20026;&#39564;&#35777;&#38598;&#27979;&#35797;&#27169;&#22411;&#12290;GridSearchCV&#36941;&#21382;&#21508;&#20010;&#21442;&#25968;&#65292;&#36890;&#36807;&#20132;&#21449;&#39564;&#35777;&#24471;&#21040;&#24179;&#22343;&#24471;&#20998;&#26368;&#39640;&#30340;&#19968;&#32452;&#21442;&#25968;&#12290;cvresults-&#21487;&#20197;&#24471;&#21040;&#19981;&#21516;&#21442;&#25968;&#30340;&#32452;&#21512;&#26041;&#24335;&#12290;&#19981;&#20351;&#29992;&#20132;&#21449;&#39564;&#35777;&#21487;&#33021;&#20250;&#22240;&#20026;&#25968;&#25454;&#38598;&#20869;&#37096;&#26377;&#26041;&#24046;&#32780;&#19981;&#33021;&#24456;&#22909;&#30340;&#21453;&#26144;&#20986;&#27169;&#22411;&#30340;&#25928;&#26524;&#65292;&#20132;&#21449;&#39564;&#35777;&#36991;&#20813;&#20102;&#25968;&#25454;&#38598;&#22312;&#20998;&#21106;&#26102;&#26377;&#26041;&#24046;">&#38382;&#39064; 8 - &#22238;&#31572;&#65306;&#23558;&#25968;&#25454;&#20998;&#20026;K&#20221;&#65292;&#27599;&#27425;&#20351;&#29992;&#20854;&#20013;1&#20221;&#20316;&#20026;&#39564;&#35777;&#38598;&#27979;&#35797;&#27169;&#22411;&#12290;GridSearchCV&#36941;&#21382;&#21508;&#20010;&#21442;&#25968;&#65292;&#36890;&#36807;&#20132;&#21449;&#39564;&#35777;&#24471;&#21040;&#24179;&#22343;&#24471;&#20998;&#26368;&#39640;&#30340;&#19968;&#32452;&#21442;&#25968;&#12290;cv<em>results</em> &#21487;&#20197;&#24471;&#21040;&#19981;&#21516;&#21442;&#25968;&#30340;&#32452;&#21512;&#26041;&#24335;&#12290;&#19981;&#20351;&#29992;&#20132;&#21449;&#39564;&#35777;&#21487;&#33021;&#20250;&#22240;&#20026;&#25968;&#25454;&#38598;&#20869;&#37096;&#26377;&#26041;&#24046;&#32780;&#19981;&#33021;&#24456;&#22909;&#30340;&#21453;&#26144;&#20986;&#27169;&#22411;&#30340;&#25928;&#26524;&#65292;&#20132;&#21449;&#39564;&#35777;&#36991;&#20813;&#20102;&#25968;&#25454;&#38598;&#22312;&#20998;&#21106;&#26102;&#26377;&#26041;&#24046;<a class="anchor-link" href="#&#38382;&#39064;-8---&#22238;&#31572;&#65306;&#23558;&#25968;&#25454;&#20998;&#20026;K&#20221;&#65292;&#27599;&#27425;&#20351;&#29992;&#20854;&#20013;1&#20221;&#20316;&#20026;&#39564;&#35777;&#38598;&#27979;&#35797;&#27169;&#22411;&#12290;GridSearchCV&#36941;&#21382;&#21508;&#20010;&#21442;&#25968;&#65292;&#36890;&#36807;&#20132;&#21449;&#39564;&#35777;&#24471;&#21040;&#24179;&#22343;&#24471;&#20998;&#26368;&#39640;&#30340;&#19968;&#32452;&#21442;&#25968;&#12290;cvresults-&#21487;&#20197;&#24471;&#21040;&#19981;&#21516;&#21442;&#25968;&#30340;&#32452;&#21512;&#26041;&#24335;&#12290;&#19981;&#20351;&#29992;&#20132;&#21449;&#39564;&#35777;&#21487;&#33021;&#20250;&#22240;&#20026;&#25968;&#25454;&#38598;&#20869;&#37096;&#26377;&#26041;&#24046;&#32780;&#19981;&#33021;&#24456;&#22909;&#30340;&#21453;&#26144;&#20986;&#27169;&#22411;&#30340;&#25928;&#26524;&#65292;&#20132;&#21449;&#39564;&#35777;&#36991;&#20813;&#20102;&#25968;&#25454;&#38598;&#22312;&#20998;&#21106;&#26102;&#26377;&#26041;&#24046;">&#194;&#182;</a></h3><p>。</p>
+<h3>问题 8 - 回答：<br/><font size=3 face='黑体'>1.起的过拟合。K折交叉验证法 将训练集的所有数据平均划分成K份，取第K份作为验证集，余下的K-1份为训练集然后训练K次，将K次的得分取平均值作为最后的得分。<br/>2.利用网格搜索对不同参数下的模型进行K折交叉验证然后进行训练，最后得到各参数下的验证得分，比较这些得分，找出最高值就可以找出对于模型来说最佳的参数组合。<br/>3.GridSearchCV中的'cvresults'属性能告诉我们什么？ cvresults属性返回一个DataFrame对象，告诉我们成个网格搜索过程中的具体情况，如每一种参数运行下的平均模型训练时间，平均训练集得分，平均验证集得分，K折交叉检验每一次的训练得分和验证得分。<br/> 交叉验证提高了模型的泛化能力，尽量减小了预测估计误差。如果不使用交叉检验，可能模型的验证得分不能代表模型的预测，因为可能数据集分割有偏差，验证集上的表现不能完全代表模型的预测能力。使用交叉检验就使得最终的得分较好体现模型在整个数据集的performance平均水平。</h3>
 
 </div>
 </div>
@@ -13973,7 +14006,8 @@ qCAAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#38382;&#39064;-9---&#22238;&#31572;&#65306;">&#38382;&#39064; 9 - &#22238;&#31572;&#65306;<a class="anchor-link" href="#&#38382;&#39064;-9---&#22238;&#31572;&#65306;">&#194;&#182;</a></h3>
+<h3 id="&#38382;&#39064;-9---&#22238;&#31572;&#65306;">&#38382;&#39064; 9 - &#22238;&#31572;&#65306;<a class="anchor-link" href="#&#38382;&#39064;-9---&#22238;&#31572;&#65306;">&#194;&#182;</a></h3><p>相同</p>
+
 </div>
 </div>
 </div>
@@ -13982,6 +14016,21 @@ qCAAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#31532;&#20845;&#27493;.-&#20570;&#20986;&#39044;&#27979;">&#31532;&#20845;&#27493;. &#20570;&#20986;&#39044;&#27979;<a class="anchor-link" href="#&#31532;&#20845;&#27493;.-&#20570;&#20986;&#39044;&#27979;">&#194;&#182;</a></h2><p>当我们用数据训练出一个模型，它现在就可用于对新的数据进行预测。在决策树回归函数中，模型已经学会对新输入的数据<em>提问</em>，并返回对<strong>目标变量</strong>的预测值。你可以用这个预测来获取数据未知目标变量的信息，这些数据必须是不包含在训练数据之内的。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#32534;&#31243;&#32451;&#20064;-2:-&#25968;&#25454;&#20998;&#21106;&#19982;&#37325;&#25490;">&#32534;&#31243;&#32451;&#20064; 2: &#25968;&#25454;&#20998;&#21106;&#19982;&#37325;&#25490;<a class="anchor-link" href="#&#32534;&#31243;&#32451;&#20064;-2:-&#25968;&#25454;&#20998;&#21106;&#19982;&#37325;&#25490;">&#194;&#182;</a></h3><p>接下来，你需要把波士顿房屋数据集分成训练和测试两个子集。通常在这个过程中，数据也会被重排列，以消除数据集中由于顺序而产生的偏差。
+在下面的代码中，你需要</p>
+<p>使用 <code>sklearn.model_selection</code> 中的 <code>train_test_split</code>， 将<code>features</code>和<code>prices</code>的数据都分成用于训练的数据子集和用于测试的数据子集。</p>
+<ul>
+<li>分割比例为：80%的数据用于训练，20%用于测试；</li>
+<li>选定一个数值以设定 <code>train_test_split</code> 中的 <code>random_state</code> ，这会确保结果的一致性；</li>
+</ul>
 
 </div>
 </div>
@@ -14072,7 +14121,8 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#38382;&#39064;-10---&#22238;&#31572;&#65306;&#21512;&#29702;&#65292;&#25151;&#38388;&#36234;&#22810;&#65292;&#21608;&#22260;&#29615;&#22659;&#36234;&#22909;&#65292;&#20215;&#26684;&#36234;&#36149;">&#38382;&#39064; 10 - &#22238;&#31572;&#65306;&#21512;&#29702;&#65292;&#25151;&#38388;&#36234;&#22810;&#65292;&#21608;&#22260;&#29615;&#22659;&#36234;&#22909;&#65292;&#20215;&#26684;&#36234;&#36149;<a class="anchor-link" href="#&#38382;&#39064;-10---&#22238;&#31572;&#65306;&#21512;&#29702;&#65292;&#25151;&#38388;&#36234;&#22810;&#65292;&#21608;&#22260;&#29615;&#22659;&#36234;&#22909;&#65292;&#20215;&#26684;&#36234;&#36149;">&#194;&#182;</a></h3>
+<h3 id="&#38382;&#39064;-10---&#22238;&#31572;&#65306;">&#38382;&#39064; 10 - &#22238;&#31572;&#65306;<a class="anchor-link" href="#&#38382;&#39064;-10---&#22238;&#31572;&#65306;">&#194;&#182;</a></h3><p>合理，房间越多，周围环境越好，价格越贵；贫困指数越高，房价越低，这也与之前的预估一致；学生/老师比例越高房价越低，这与估计一致。因此我认为总体来说是合理的。</p>
+
 </div>
 </div>
 </div>
@@ -14200,7 +14250,8 @@ Range in prices: $28,652.84
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#38382;&#39064;-12---&#22238;&#31572;&#65306;&#23545;&#29305;&#23450;&#23458;&#25143;&#65292;&#19981;&#21516;&#35757;&#32451;&#25968;&#25454;&#30340;&#24433;&#21709;&#24182;&#19981;&#26159;&#24456;&#22823;&#12290;">&#38382;&#39064; 12 - &#22238;&#31572;&#65306;&#23545;&#29305;&#23450;&#23458;&#25143;&#65292;&#19981;&#21516;&#35757;&#32451;&#25968;&#25454;&#30340;&#24433;&#21709;&#24182;&#19981;&#26159;&#24456;&#22823;&#12290;<a class="anchor-link" href="#&#38382;&#39064;-12---&#22238;&#31572;&#65306;&#23545;&#29305;&#23450;&#23458;&#25143;&#65292;&#19981;&#21516;&#35757;&#32451;&#25968;&#25454;&#30340;&#24433;&#21709;&#24182;&#19981;&#26159;&#24456;&#22823;&#12290;">&#194;&#182;</a></h3>
+<h3 id="&#38382;&#39064;-12---&#22238;&#31572;&#65306;">&#38382;&#39064; 12 - &#22238;&#31572;&#65306;<a class="anchor-link" href="#&#38382;&#39064;-12---&#22238;&#31572;&#65306;">&#194;&#182;</a></h3><p>对特定客户，不同训练数据的影响并不是很大，波动范围在大约正负3%左右是可以接受的，range in prices在28000左右，与400000的基数相比大约在7%左右，总的来说鲁棒性是较好的。</p>
+
 </div>
 </div>
 </div>
